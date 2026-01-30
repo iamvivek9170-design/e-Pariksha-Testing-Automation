@@ -1,4 +1,0 @@
-base\BaseTest.class
-tests\sanity\ExamSanityTest.class
-tests\smoke\LoginSmokeTest.class
-tests\regression\FullRegressionTest.class
