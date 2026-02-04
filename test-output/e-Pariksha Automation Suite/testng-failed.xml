@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [e-Pariksha Automation Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="listeners.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="Sanity Tests(failed)">
+    <classes>
+      <class name="tests.sanity.SanitySuiteTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyStudentSanity"/>
+        </methods>
+      </class> <!-- tests.sanity.SanitySuiteTest -->
+    </classes>
+  </test> <!-- Sanity Tests(failed) -->
+  <test thread-count="5" name="Regression Tests(failed)">
+    <classes>
+      <class name="tests.regression.StudentFunctionTest">
+        <methods>
+          <include name="verifyStudenLogin"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyStudentExamstart"/>
+        </methods>
+      </class> <!-- tests.regression.StudentFunctionTest -->
+      <class name="tests.regression.CoordinatorFunctionTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="C_TS12_TC28_manageStudentEditStuduentUnBlock"/>
+          <include name="C_TS12_TC27_manageStudentEditStuduentBlock"/>
+        </methods>
+      </class> <!-- tests.regression.CoordinatorFunctionTest -->
+      <class name="tests.regression.AuthorizationRegressionTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="A_TS04_TC21_verifyAdminCanAccessCoordinatorDashboardBySwitch"/>
+          <include name="C_TS08_TC017_verifyCoordinatorCantnotAccessAdminDashboard"/>
+        </methods>
+      </class> <!-- tests.regression.AuthorizationRegressionTest -->
+    </classes>
+  </test> <!-- Regression Tests(failed) -->
+</suite> <!-- Failed suite [e-Pariksha Automation Suite] -->

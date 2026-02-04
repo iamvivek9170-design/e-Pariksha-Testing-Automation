@@ -3,9 +3,10 @@ package pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import base.DriverFactory;
-import utils.ConfigReader;
+import constants.FrameworkConstants;
 
 public class StudentDashboardPage extends BasePage {
 
@@ -30,40 +31,62 @@ public class StudentDashboardPage extends BasePage {
 	private @FindBy(name = "btnPrevious") WebElement previousButton;
 
 	private @FindBy(name = "btnEnd") WebElement endExam;
-	
+
 	private @FindBy(className = "pageheader") WebElement resultStudent;
 
-	public void stratExam() {
-		
-		int i = 1;
-		int totalQuestion = Integer.parseInt(ConfigReader.getPropertyValue("totalQuestion"));
-		click(Module1);
-		while (i <= totalQuestion) {
-			click(Option1);
-			if(i<totalQuestion) {
-			click(nextButton);
-			}
-			i++;
-		}
-		click(endExam);
-		Alert alert = DriverFactory.getDriver().switchTo().alert();
-		alert.accept();
+	private @FindBy(id = "divEditMsg") WebElement examNotSchdulleMessage;
+
+	public StudentDashboardPage() {
+		PageFactory.initElements(getDriver(), this);
+	}
+
+	public boolean stratExam() {
+
+	    int totalQuestion = Integer.parseInt(FrameworkConstants.TOTAL_QUESTIONS);
+
+	    // ✅ First Check: Is the module completely missing?
+	    if (!isDisplayed(Module1)) {
+	        System.out.println("No exam is scheduled today. Please contact examiner");
+	        return false;
+	    }
+
+	    // ✅ Second Check: Is it displayed but already completed?
+	    // We check the "title" attribute which says "Exam already given"
+	    String status = Module1.getAttribute("title");
+	    if (status != null && status.contains("already given")) {
+	        System.out.println("Student has already completed this exam.");
+	        return false;
+	    }
+
+	    click(Module1);
+
+	    for (int i = 1; i <= totalQuestion; i++) {
+	        click(Option1);
+	        if (i < totalQuestion) {
+	            click(nextButton);
+	        }
+	    }
+
+	    click(endExam);
+
+	    Alert alert = DriverFactory.getDriver().switchTo().alert();
+	    alert.accept();
+
+	    return true; 
 	}
 
 	public boolean verifyExamStart() {
-		try {
-			isDisplayed(timer);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-	
-	public boolean verifyStudentResult() {
-		return isDisplayed(resultStudent);	
+	    // Modified to be true if timer is visible OR if it's already finished
+	    return isDisplayed(timer) || Module1.getAttribute("title").contains("already given");
 	}
 
-	
-	
-	
+
+
+	public boolean verifyStudentResult() {
+		return isDisplayed(resultStudent);
+	}
+
+	public boolean verifyExamNotScheduledMessage() {
+		return isDisplayed(examNotSchdulleMessage);
+	}
 }

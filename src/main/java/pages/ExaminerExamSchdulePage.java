@@ -4,11 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.FrameworkConstants;
+
 public class ExaminerExamSchdulePage extends BasePage {
 
 	private @FindBy(id = "idScheDate") WebElement examDate;
 
-	private @FindBy(xpath = "(//*[@class=\"dayNormal\"])[6]") WebElement chooseDate; /// select date 5 of current month
+	private @FindBy(css  = "[istoday='1']") WebElement chooseDate; /// select date 5 of current month
 																						/// and current year
 
 	private @FindBy(id = "idModuleID") WebElement ExamModule;
@@ -28,6 +30,10 @@ public class ExaminerExamSchdulePage extends BasePage {
 	private @FindBy(id = "rdExamResultNo") WebElement showResultNo;
 
 	private @FindBy(xpath = "(//*[@class=\"button\"])[1]") WebElement schedule;
+	
+	private @FindBy(id = "msgDiv") WebElement examScheduleMessage;
+
+	
 
 	public ExaminerExamSchdulePage() {
 //		System.out.println("Driver in LoginPage = " + getDriver());
@@ -37,11 +43,11 @@ public class ExaminerExamSchdulePage extends BasePage {
 	public void schduleExamStausYesShowResultYes() {
 		click(examDate);
 		click(chooseDate);
-		selectByVisibleText(ExamModule, "Module1");
-		type(numberOfQuestion, "3");
-		type(timeDuration, "2");
-		type(passingMarks, "1");
-		click(showResultYes); 
+		selectByIndex(ExamModule, 1);
+		type(numberOfQuestion, FrameworkConstants.TOTAL_QUESTIONS);
+		type(timeDuration, FrameworkConstants.EXAM_DURATION);
+		type(passingMarks, FrameworkConstants.PASSING_MARKS);
+		click(statusYes); 
 		click(showResultYes);
 		click(schedule);
 	}
@@ -49,11 +55,11 @@ public class ExaminerExamSchdulePage extends BasePage {
 	public void schduleExamStausNoShowResultNo() {
 		click(examDate);
 		click(chooseDate);
-		selectByVisibleText(ExamModule, "Module1");
-		click(numberOfQuestion);
-		click(timeDuration);
-		click(passingMarks);
-		click(showResultNo);
+		selectByVisibleText(ExamModule, FrameworkConstants.DEFAULT_EXAM_MODULE);
+		type(numberOfQuestion, FrameworkConstants.TOTAL_QUESTIONS);
+		type(timeDuration, FrameworkConstants.EXAM_DURATION);
+		type(passingMarks, FrameworkConstants.PASSING_MARKS);
+		click(statusNo);
 		click(showResultNo);
 		click(schedule);
 
@@ -62,11 +68,11 @@ public class ExaminerExamSchdulePage extends BasePage {
 	public void schduleExamStausYesShowResultNo() {
 		click(examDate);
 		click(chooseDate);
-		selectByVisibleText(ExamModule, "Module1");
-		click(numberOfQuestion);
-		click(timeDuration);
-		click(passingMarks);
-		click(showResultYes);
+		selectByVisibleText(ExamModule, FrameworkConstants.DEFAULT_EXAM_MODULE);
+		type(numberOfQuestion, FrameworkConstants.TOTAL_QUESTIONS);
+		type(timeDuration, FrameworkConstants.EXAM_DURATION);
+		type(passingMarks, FrameworkConstants.PASSING_MARKS);
+		click(statusYes);
 		click(showResultNo);
 		click(schedule);
 
@@ -75,14 +81,27 @@ public class ExaminerExamSchdulePage extends BasePage {
 	public void schduleExamStausNoShowResultYes() {
 		click(examDate);
 		click(chooseDate);
-		selectByVisibleText(ExamModule, "Module1");
-		click(numberOfQuestion);
-		click(timeDuration);
-		click(passingMarks);
-		click(showResultNo);
+		selectByVisibleText(ExamModule, FrameworkConstants.DEFAULT_EXAM_MODULE);
+		type(numberOfQuestion, FrameworkConstants.TOTAL_QUESTIONS);
+		type(timeDuration, FrameworkConstants.EXAM_DURATION);
+		type(passingMarks, FrameworkConstants.PASSING_MARKS);
+		click(statusNo);
 		click(showResultYes);
 		click(schedule);
 
 	}
 
+	
+	public boolean verifyExamScheduleessage() {
+		try {
+			isDisplayed(examScheduleMessage);
+			Thread.sleep(1000);
+			System.out.println(getText(examScheduleMessage));
+			return true;
+		} catch (Exception e) {
+			System.out.println(getText(examScheduleMessage));
+			return false;
+		}
+	}
+	
 }

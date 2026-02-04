@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
 public class DriverFactory {
-
+ 
 	private static WebDriver driver; 
 
 	public WebDriver initDriver() {
@@ -59,7 +59,6 @@ public class DriverFactory {
 	}
 
 	public static WebDriver getDriver() {
-
 		return driver;
 	}
 }

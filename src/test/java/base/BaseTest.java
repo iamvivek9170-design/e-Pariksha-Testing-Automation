@@ -13,7 +13,7 @@ public class BaseTest {
 
 	@BeforeMethod
 	public void setUp() {
-
+ 
 		driverFactory.initDriver();
 		DriverFactory.getDriver().get(ConfigReader.getPropertyValue("url"));
 

@@ -19,6 +19,8 @@ public class ExaminerDashboardPage extends BasePage {
 
 	private @FindBy(css = "[pagenumber='5pg']") WebElement profile;
 	
+	private @FindBy (css = "[title=\"Home\"]") WebElement home;
+	
 
 	public ExaminerDashboardPage() {
 		PageFactory.initElements(getDriver(), this);
@@ -38,7 +40,7 @@ public class ExaminerDashboardPage extends BasePage {
 		click(manageStud);
 	} 
 
-	public void exam() { // check exam date selection
+	public void exam() {
 		click(exam);
 	}
 
@@ -48,6 +50,10 @@ public class ExaminerDashboardPage extends BasePage {
 
 	public void profile() {
 		click(profile);
+	}
+	
+	public void home() {
+		click(home);
 	}
 
 }

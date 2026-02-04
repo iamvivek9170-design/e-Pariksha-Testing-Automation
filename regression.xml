@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="e-Pariksha Regression Suite">
+
+    <!-- Listener for Extent Report -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- Regression Suite -->
+    <test name="Regression Tests">
+        <classes>
+            <class name="tests.regression.AdminFunctionTest"/>
+            <class name="tests.regression.CoordinatorFunctionTest"/>
+            <class name="tests.regression.StudentFunctionTest"/>
+            <class name="tests.regression.AuthorizationRegressionTest"/>
+            <class name="tests.regression.InvalidLoginRegressionTest"/>
+        </classes>
+    </test>
+
+</suite>
+ 

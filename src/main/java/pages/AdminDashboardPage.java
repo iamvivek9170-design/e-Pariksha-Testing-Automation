@@ -19,6 +19,8 @@ public class AdminDashboardPage extends BasePage {
 	private @FindBy(id = "Image9") WebElement profile;
 
 	private @FindBy(partialLinkText = "Switch Course") WebElement switchCourse;
+	
+	private @FindBy (xpath = "(//td[@align='left']//a[contains(@onclick,'switchToSelectedCourse')])[46]\r\n") WebElement selectCorse;
 
 	public AdminDashboardPage() {
 		PageFactory.initElements(getDriver(), this);
@@ -48,29 +50,10 @@ public class AdminDashboardPage extends BasePage {
 	public void profile() {
 		click(profile);
 	}
-//
-//	public void verifyAdministratorHome() {
-//		click(home);
-//	}
-//
-//	public void verifyUserManagement() {
-//		click(users);
-//	}
-//
-//	public void verifyCourses() {
-//		click(course);
-//	}
-//
-//	public void verifyResults() {
-//		click(result);
-//	}
-//
-//	public void verifyReports() {
-//		click(reports);
-//	}
-// 
-//	public void verifyProfile() {
-//		click(profile);
-//	}
 
+	public void switchToUser() {
+		click(switchCourse);
+		click(selectCorse);
+	}
+	
 }

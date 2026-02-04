@@ -1,0 +1,449 @@
+<html>
+<head>
+<title>TestNG:  Regression Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Regression Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>18/5/1</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Feb 03 20:18:27 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>217 seconds (217918 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.regression.StudentFunctionTest.verifyStudenLogin()'><b>verifyStudenLogin</b><br>Test class: tests.regression.StudentFunctionTest</td>
+<td><div><pre>java.lang.AssertionError: Student dashboard is not visible after login expected [true] but found [false]
+	at tests.regression.StudentFunctionTest.verifyStudenLogin(StudentFunctionTest.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1533761672", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1533761672'><pre>java.lang.AssertionError: Student dashboard is not visible after login expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.regression.StudentFunctionTest.verifyStudenLogin(StudentFunctionTest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.regression.StudentFunctionTest@585811a4</td></tr>
+<tr>
+<td title='tests.regression.AuthorizationRegressionTest.A_TS04_TC21_verifyAdminCanAccessCoordinatorDashboardBySwitch()'><b>A_TS04_TC21_verifyAdminCanAccessCoordinatorDashboardBySwitch</b><br>Test class: tests.regression.AuthorizationRegressionTest</td>
+<td><div><pre>java.lang.AssertionError: Admin should redirect to Corrdinator Dashboard by Switch! expected [true] but found [false]
+	at tests.regression.AuthorizationRegressionTest.A_TS04_TC21_verifyAdminCanAccessCoordinatorDashboardBySwitch(AuthorizationRegressionTest.java:64)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace371968488", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace371968488'><pre>java.lang.AssertionError: Admin should redirect to Corrdinator Dashboard by Switch! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.regression.AuthorizationRegressionTest.A_TS04_TC21_verifyAdminCanAccessCoordinatorDashboardBySwitch(AuthorizationRegressionTest.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>tests.regression.AuthorizationRegressionTest@22c01ab0</td></tr>
+<tr>
+<td title='tests.regression.StudentFunctionTest.verifyStudentExamstart()'><b>verifyStudentExamstart</b><br>Test class: tests.regression.StudentFunctionTest</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at tests.regression.StudentFunctionTest.verifyStudentExamstart(StudentFunctionTest.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1172065562", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1172065562'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1079)
+	at org.testng.Assert.assertEquals(Assert.java:1043)
+	at org.testng.Assert.assertEquals(Assert.java:1089)
+	at tests.regression.StudentFunctionTest.verifyStudentExamstart(StudentFunctionTest.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>tests.regression.StudentFunctionTest@585811a4</td></tr>
+<tr>
+<td title='tests.regression.AuthorizationRegressionTest.C_TS08_TC017_verifyCoordinatorCantnotAccessAdminDashboard()'><b>C_TS08_TC017_verifyCoordinatorCantnotAccessAdminDashboard</b><br>Test class: tests.regression.AuthorizationRegressionTest</td>
+<td><div><pre>java.lang.AssertionError: BUG: Coordinator can view Admin Dashboard details! expected [false] but found [true]
+	at tests.regression.AuthorizationRegressionTest.C_TS08_TC017_verifyCoordinatorCantnotAccessAdminDashboard(AuthorizationRegressionTest.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace777715635", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace777715635'><pre>java.lang.AssertionError: BUG: Coordinator can view Admin Dashboard details! expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at tests.regression.AuthorizationRegressionTest.C_TS08_TC017_verifyCoordinatorCantnotAccessAdminDashboard(AuthorizationRegressionTest.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>tests.regression.AuthorizationRegressionTest@22c01ab0</td></tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS12_TC27_manageStudentEditStuduentBlock()'><b>C_TS12_TC27_manageStudentEditStuduentBlock</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (24da26c5c4925a46f49f95bf40dae378)] -&gt; id: labelMessage] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56675}, goog:processID: 26516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56675/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24da26c5c4925a46f49f95bf40dae378
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtils.waitForVisibility(WaitUtils.java:18)
+	at pages.BasePage.getText(BasePage.java:45)
+	at pages.ExaminerManageStudents.verifyblockUnblockmessage(ExaminerManageStudents.java:86)
+	at tests.regression.CoordinatorFunctionTest.C_TS12_TC27_manageStudentEditStuduentBlock(CoordinatorFunctionTest.java:69)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1756732975", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1756732975'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (24da26c5c4925a46f49f95bf40dae378)] -&gt; id: labelMessage] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56675}, goog:processID: 26516, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56675/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24da26c5c4925a46f49f95bf40dae378
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtils.waitForVisibility(WaitUtils.java:18)
+	at pages.BasePage.getText(BasePage.java:45)
+	at pages.ExaminerManageStudents.verifyblockUnblockmessage(ExaminerManageStudents.java:86)
+	at tests.regression.CoordinatorFunctionTest.C_TS12_TC27_manageStudentEditStuduentBlock(CoordinatorFunctionTest.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>25</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.regression.InvalidLoginRegressionTest.verifyLoginFailsWithWrongPassword()'><b>verifyLoginFailsWithWrongPassword</b><br>Test class: tests.regression.InvalidLoginRegressionTest</td>
+<td></td>
+<td>1</td>
+<td>tests.regression.InvalidLoginRegressionTest@411341bd</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS05_TC10_verifyUpdatingOFCourse()'><b>A_TS05_TC10_verifyUpdatingOFCourse</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>2</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.AuthorizationRegressionTest.S_TS01_TC15_verifyStudentCannotAccessCoordinatorDashboard()'><b>S_TS01_TC15_verifyStudentCannotAccessCoordinatorDashboard</b><br>Test class: tests.regression.AuthorizationRegressionTest</td>
+<td></td>
+<td>1</td>
+<td>tests.regression.AuthorizationRegressionTest@22c01ab0</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS05_TC12_verifyAddingNewModule()'><b>A_TS05_TC12_verifyAddingNewModule</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>5</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS12_TC10_verifyManageStudentDataValidFilelUpload()'><b>C_TS12_TC10_verifyManageStudentDataValidFilelUpload</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS05_TC01_verifyAddingNewCourse()'><b>A_TS05_TC01_verifyAddingNewCourse</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.AuthorizationRegressionTest.A_TS01_TC17_verifyAdminCannotAccessCoordinatorDashboardByUrl()'><b>A_TS01_TC17_verifyAdminCannotAccessCoordinatorDashboardByUrl</b><br>Test class: tests.regression.AuthorizationRegressionTest</td>
+<td></td>
+<td>11</td>
+<td>tests.regression.AuthorizationRegressionTest@22c01ab0</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS04_TC21_verfiyAdminCanSwitcToCoordinaor()'><b>A_TS04_TC21_verfiyAdminCanSwitcToCoordinaor</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>5</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS09_TC06_verifyExamScheduleBycoordinator()'><b>C_TS09_TC06_verifyExamScheduleBycoordinator</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td></td>
+<td>5</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS10_TC09_verifyResultVisibilityToCoordinator()'><b>C_TS10_TC09_verifyResultVisibilityToCoordinator</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td></td>
+<td>3</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS06_TC07_verfiyResultVisible()'><b>A_TS06_TC07_verfiyResultVisible</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.InvalidLoginRegressionTest.verifyLoginFailsWithEmptyCredentials()'><b>verifyLoginFailsWithEmptyCredentials</b><br>Test class: tests.regression.InvalidLoginRegressionTest</td>
+<td></td>
+<td>0</td>
+<td>tests.regression.InvalidLoginRegressionTest@411341bd</td></tr>
+<tr>
+<td title='tests.regression.AuthorizationRegressionTest.S_TS01_TC14_verifyStudentCannotAccessAdminDashboard()'><b>S_TS01_TC14_verifyStudentCannotAccessAdminDashboard</b><br>Test class: tests.regression.AuthorizationRegressionTest</td>
+<td></td>
+<td>11</td>
+<td>tests.regression.AuthorizationRegressionTest@22c01ab0</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS04_TC01_verifyAddingNewUser()'><b>A_TS04_TC01_verifyAddingNewUser</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS01_TC01_verfifyAdminLoginSuccessfully()'><b>A_TS01_TC01_verfifyAdminLoginSuccessfully</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>1</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.InvalidLoginRegressionTest.verifyLoginFailsWithWrongUserId()'><b>verifyLoginFailsWithWrongUserId</b><br>Test class: tests.regression.InvalidLoginRegressionTest</td>
+<td></td>
+<td>1</td>
+<td>tests.regression.InvalidLoginRegressionTest@411341bd</td></tr>
+<tr>
+<td title='tests.regression.AdminFunctionTest.A_TS04_TC011_verifyUpdatingDetailOfExstingUser()'><b>A_TS04_TC011_verifyUpdatingDetailOfExstingUser</b><br>Test class: tests.regression.AdminFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.AdminFunctionTest@56b78e55</td></tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS12_TC04_verifyManageStudentDataInvalidFilelUpload()'><b>C_TS12_TC04_verifyManageStudentDataInvalidFilelUpload</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td></td>
+<td>4</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.regression.CoordinatorFunctionTest.C_TS12_TC28_manageStudentEditStuduentUnBlock()'><b>C_TS12_TC28_manageStudentEditStuduentUnBlock</b><br>Test class: tests.regression.CoordinatorFunctionTest</td>
+<td><div><pre>java.lang.Throwable: Method tests.regression.CoordinatorFunctionTest.C_TS12_TC28_manageStudentEditStuduentUnBlock() on instance tests.regression.CoordinatorFunctionTest@3277e499 depends on not successfully finished methods 
+[tests.regression.CoordinatorFunctionTest.C_TS12_TC27_manageStudentEditStuduentBlock() on instance tests.regression.CoordinatorFunctionTest@3277e499]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace202997574", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace202997574'><pre>java.lang.Throwable: Method tests.regression.CoordinatorFunctionTest.C_TS12_TC28_manageStudentEditStuduentUnBlock() on instance tests.regression.CoordinatorFunctionTest@3277e499 depends on not successfully finished methods 
+[tests.regression.CoordinatorFunctionTest.C_TS12_TC27_manageStudentEditStuduentBlock() on instance tests.regression.CoordinatorFunctionTest@3277e499]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.regression.CoordinatorFunctionTest@3277e499</td></tr>
+</table><p>
+</body>
+</html>

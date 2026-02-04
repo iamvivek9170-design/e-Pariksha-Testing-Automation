@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="e-Pariksha Smoke Suite">
+
+    <!-- Listener for Extent Report -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- Smoke Test Execution -->
+    <test name="Smoke Tests">
+
+        <classes>
+            <class name="tests.smoke.LoginDataDrivenSmokeTest"/>
+        </classes>
+
+    </test>
+
+</suite>

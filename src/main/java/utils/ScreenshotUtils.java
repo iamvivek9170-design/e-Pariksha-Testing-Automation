@@ -8,35 +8,39 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class ScreenshotUtils { 
+public class ScreenshotUtils {
 
-	public static String captureScreenshot(WebDriver driver, String testName) {
+    public static String captureScreenshot(WebDriver driver, String testName) {
 
-		try {
+        try {
 
-			String folderPath = "test-output/screenshots/";
+            // ✅ Correct folder path (framework locked rule)
+            String folderPath = "test-output/screenshots/";
 
-			File folder = new File(folderPath);
+            File folder = new File(folderPath);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
 
-			if (!folder.exists()) {
-				folder.mkdirs();
-			}
- 
-			String screenshotPath = folderPath + folder + "_" + System.currentTimeMillis() + ".png";
+            // ✅ Correct screenshot name
+            String screenshotName =
+                    testName + "_" + System.currentTimeMillis() + ".png";
 
-			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            // ✅ Final full screenshot path
+            String screenshotPath = folderPath + screenshotName;
 
-			File destFile = new File(screenshotPath);
+            File scrFile = ((TakesScreenshot) driver)
+                    .getScreenshotAs(OutputType.FILE);
 
-			FileUtils.copyFile(scrFile, destFile);
+            File destFile = new File(screenshotPath);
 
-			return screenshotPath;
-		}
- 
-		catch (IOException e) {
-			throw new RuntimeException("Screenshot capture failed", e);
-		}
+            FileUtils.copyFile(scrFile, destFile);
 
-	}
+            // ✅ Return relative path for Extent Report
+            return "screenshots/" + screenshotName;
 
+        } catch (IOException e) {
+            throw new RuntimeException("Screenshot capture failed", e);
+        }
+    }
 }
